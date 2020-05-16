@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/resource?serverTimezone=UTC&characterEncoding=utf8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: author-resource
+
+security:
+  oauth2:
+    client:
+      client-id: acme
+      client-secret: acmesecret
+      access-token-uri: http://localhost:8080/oauth/token
+      user-authorization-uri: http://localhost:8080/oauth/authorize
+    resource:
+      token-info-uri: http://localhost:8080/oauth/check_token
+logging:
+  level:
+    org:
+      springframework:
+        security: debug
+server:
+  port: 9090
+mybatis:
+  type-aliases-package: com.example.pojo
+  mapper-locations: classpath:mapper/*.xml

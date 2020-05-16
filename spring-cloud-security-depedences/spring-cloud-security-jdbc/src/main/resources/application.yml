@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/oauth2?serverTimezone=UTC&characterEncoding=utf8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: author-server
+logging:
+  level:
+    org:
+      springframework:
+        security: debug
+mybatis:
+  type-aliases-package: com.example.pojo
+  mapper-locations: classpath:mapper/*.xml
